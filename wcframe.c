@@ -5,9 +5,17 @@
    CONDITIONS OF ANY KIND, either express or implied.
 */
 
-#include "wcframe.h"
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_event_loop.h"
 #include "esp_log.h"
+
+#include "wcframe.h"
 
 static const char *TAG = "WC_FRAME";
 
