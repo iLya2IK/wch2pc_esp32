@@ -10,6 +10,15 @@
 #ifndef WC_FRAME_H
 #define WC_FRAME_H
 
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_event_loop.h"
+
 #define INITIAL_FRAME_BUFFER 0x8000
 
 typedef struct wc_frame {

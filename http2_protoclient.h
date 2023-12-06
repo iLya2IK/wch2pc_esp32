@@ -10,6 +10,15 @@
 #ifndef HTTP2_PROTO_CLIENT
 #define HTTP2_PROTO_CLIENT
 
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_event_loop.h"
+
 #include <cJSON.h>
 #ifdef CONFIG_WC_USE_IO_STREAMS
 #include "wcframe.h"
