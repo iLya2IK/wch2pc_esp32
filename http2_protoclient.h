@@ -129,7 +129,7 @@ bool h2pc_is_wait_for_frame();
 void h2pc_is_stop();
 
 /* outgoing streaming */
-int  h2pc_os_prepare();
+int  h2pc_os_prepare(const char * subproto);
 void h2pc_os_prepare_frame(char * buf, int size);
 bool h2pc_os_wait_for_frame();
 #endif

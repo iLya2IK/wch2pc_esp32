@@ -24,6 +24,7 @@
 #define HTTP2_STREAMING_ADDREC_PATH      "/addRecord.json?shash=%s"
 #define HTTP2_STREAMING_INP_PATH         "/output.raw?shash=%s&device=%s"
 #define HTTP2_STREAMING_OUT_PATH         "/input.raw?shash=%s"
+#define HTTP2_STREAMING_OUT_WITH_SP_PATH "/input.raw?shash=%s&subproto=%s"
 
 /* JSON-RPC fields */
 #define JSON_RPC_TARGET_BROADCAST        NULL

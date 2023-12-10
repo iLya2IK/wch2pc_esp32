@@ -1012,7 +1012,7 @@ int handle_response(struct sh2lib_handle *handle, int32_t stream_id, const char 
     return NGHTTP2_ERR_WOULDBLOCK;
 }
 
-int h2pc_os_prepare() {
+int h2pc_os_prepare(const char * subproto) {
     int ret = ESP_OK;
 
     char * aPath = NULL;
@@ -1025,7 +1025,10 @@ int h2pc_os_prepare() {
     memset(aSID, 0, TOKEN_LENGTH);
     h2pc_encode_http_str(h2pc_sid, aSID);
 
-    sprintf(aPath, HTTP2_STREAMING_ADDREC_PATH, aSID);
+    if (subproto != NULL)
+        sprintf(aPath, HTTP2_STREAMING_OUT_WITH_SP_PATH, aSID, subproto);
+    else
+        sprintf(aPath, HTTP2_STREAMING_OUT_PATH, aSID);
 
     out_streaming_strm_id = sh2lib_do_put(&hd, aPath, send_put_data, handle_response);
     ESP_LOGD(H2PC_TAG, "[data-prvd] Streaming stream id = %d", out_streaming_strm_id);
